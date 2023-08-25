@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import Notifications from './Notifications/Notifications';
 import './App.css';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import Statistics from './Statistics/Statistics';
 
 const App = () => {
   const [state, setState] = useState({
