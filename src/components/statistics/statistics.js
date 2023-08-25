@@ -1,36 +1,34 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Statistics = ({ good, neutral, bad, total }) => {
-  const countPositiveFeedbackPercentage = () => {
-    const positivPercentage = Math.round((good / total) * 100);
-    return positivPercentage || 0;
-  };
-  const data = [
-    { id: 1, text: 'Good: ', value: good },
-    { id: 2, text: 'Neutral: ', value: neutral },
-    { id: 3, text: 'Bad: ', value: bad },
-    { id: 4, text: 'Total: ', value: total },
-    {
-      id: 5,
-      text: 'Positiv feedback: ',
-      value: countPositiveFeedbackPercentage(),
-      percentage: '%',
-    },
-  ];
-
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <div>
-      <div>
-        {data.map(item => {
-          return (
-            <p key={item.id}>
-              {item.text}
-              {item.value}
-              {item.percentage}
-            </p>
-          );
-        })}
-      </div>
+    <div className="Container">
+      <p className="Item">
+        Good: <span className="Value">{good}</span>
+      </p>
+      <p className="Item">
+        Neutral: <span className="Value">{neutral}</span>
+      </p>
+      <p className="Item">
+        Bad: <span className="Value">{bad}</span>
+      </p>
+      <p className="Item">
+        Total: <span className="Value">{total}</span>
+      </p>
+      <p className="Item">
+        Positive feedback: <span className="Value">{positivePercentage}%</span>
+      </p>
     </div>
   );
 };
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
+
 export default Statistics;

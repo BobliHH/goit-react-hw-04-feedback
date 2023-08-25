@@ -1,0 +1,11 @@
+.Container{
+margin-top: 10px;
+} 
+
+.Item {
+  margin-bottom: 5px;
+}
+
+.Value {
+  font-weight: bold;
+}
